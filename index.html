@@ -51,7 +51,7 @@
         
         <div class="buttons">
             <button id="yesBtn" onclick="celebrate()">Yes</button>
-            <button id="noBtn" onmouseover="moveButton()">No</button>
+            <button id="noBtn" onmouseover="moveButton()" ontouchstart="moveButton()">No</button>
         </div>
     </div>
 
@@ -69,11 +69,12 @@
         }
 
         function celebrate() {
-            document.getElementById('question').innerHTML = "Yay! See you then! ❤️";
-            document.querySelector('.cat-img').src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHp1eHh6eXJ6eHh6eHh6eHh6eHh6eHh6eHh6eHh6eHh6eHh6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/26FLdmIp6wJr91JAI/giphy.gif";
+            document.getElementById('question').innerHTML = "I can't wait to spend forever with you! ❤️";
+            document.querySelector('.cat-img').src = "https://www.hiclipart.com/free-transparent-background-png-clipart-lhvym";
             document.getElementById('noBtn').style.display = 'none';
         }
     </script>
 </body>
 
 </html>
+
