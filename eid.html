@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid Mubarak, Aisha!</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #3A7728 0%, #003366 50%, #CE1126 100%);
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            margin: 0;
+            color: white;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            padding: 40px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            text-align: center;
+            max-width: 420px;
+            margin: 20px;
+        }
+        h1 { font-size: 2.8rem; margin: 10px 0; color: #fff; }
+        .name { font-size: 1.8rem; color: #fbbf24; font-weight: bold; margin-bottom: 20px; }
+        .dua { 
+            font-style: italic; 
+            font-size: 1.1rem; 
+            line-height: 1.6; 
+            background: rgba(0,0,0,0.2); 
+            padding: 20px; 
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+        .arabic { font-size: 1.4rem; display: block; margin-bottom: 10px; }
+        #countdown {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="name">Eid Mubarak, Aisha!</div>
+    
+    <div class="dua">
+        <span class="arabic">تقبل الله منا ومنكم</span>
+        "Taqabbalallahu minna wa minkum"<br>
+        <small>(May Allah accept [good deeds] from us and from you)</small>
+        <br><br>
+        May your days be filled with peace, your heart with joy, and your life with blessings.
+    </div>
+    
+    <div id="countdown">Calculating...</div>
+</div>
+
+<script>
+    // Eid Date: March 20, 2026 (GMT for The Gambia)
+    const eidDate = new Date("2026-03-20T00:00:00Z").getTime();
+
+    function update() {
+        const now = new Date().getTime();
+        const diff = eidDate - now;
+
+        if (diff > 0) {
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const secs = Math.floor((diff % (1000 * 60)) / 1000);
+            document.getElementById("countdown").innerHTML = `Only ${hours}h ${mins}m ${secs}s until Eid in The Gambia!`;
+        } else {
+            document.getElementById("countdown").innerHTML = "✨ The celebration has begun! ✨";
+        }
+    }
+
+    setInterval(update, 1000);
+    update();
+</script>
+</body>
+</html>
